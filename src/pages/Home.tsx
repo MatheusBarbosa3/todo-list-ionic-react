@@ -4,8 +4,6 @@ import {
   IonContent,
   IonInput,
   IonButton,
-  IonSelect,
-  IonSelectOption,
   IonHeader,
   IonToolbar,
   IonTitle,
@@ -21,16 +19,7 @@ import {
 } from "@ionic/react";
 import api from "../services/api";
 import TodoList from "../components/TodoList";
-import {
-  add,
-  addCircle,
-  addCircleOutline,
-  addCircleSharp,
-  addOutline,
-  addSharp,
-  filterSharp,
-  personCircle,
-} from "ionicons/icons";
+import { add, filterSharp, personCircle } from "ionicons/icons";
 
 const Home: React.FC = () => {
   const [tasks, setTasks] = useState<

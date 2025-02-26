@@ -1,4 +1,3 @@
-// Componente TodoList (atualizado)
 import { IonList } from "@ionic/react";
 import TodoItem from "./TodoItem";
 
@@ -9,7 +8,12 @@ interface TodoListProps {
   onToggleComplete: (id: number) => void;
 }
 
-const TodoList: React.FC<TodoListProps> = ({ tasks, onRemove, onEdit, onToggleComplete }) => {
+const TodoList: React.FC<TodoListProps> = ({
+  tasks,
+  onRemove,
+  onEdit,
+  onToggleComplete,
+}) => {
   return (
     <IonList>
       {tasks.map((task) => (

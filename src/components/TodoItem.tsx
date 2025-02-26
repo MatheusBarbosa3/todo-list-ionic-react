@@ -1,7 +1,11 @@
-// Componente TodoItem (atualizado para permitir editar na tela)
 import { IonItem, IonLabel, IonButton, IonInput, IonIcon } from "@ionic/react";
 import { useEffect, useRef, useState } from "react";
-import { checkmarkCircleOutline, checkmarkCircle, trash, pencilSharp } from "ionicons/icons";
+import {
+  checkmarkCircleOutline,
+  checkmarkCircle,
+  trash,
+  pencilSharp,
+} from "ionicons/icons";
 
 interface TodoItemProps {
   task: { id: number; text: string; completed: boolean };
@@ -53,14 +57,13 @@ const TodoItem: React.FC<TodoItemProps> = ({
             value={newText}
             onIonChange={(e) => setNewText(e.detail.value!)}
             ref={inputRef} // Usando a referência para o foco
-            
           />
         ) : (
           task.text
         )}
       </IonLabel>
       <IonButton onClick={handleEdit}>
-        {isEditing ? "Salvar" :   <IonIcon icon={pencilSharp} />}
+        {isEditing ? "Salvar" : <IonIcon icon={pencilSharp} />}
       </IonButton>
       <IonButton color="danger" onClick={() => onRemove(task.id)}>
         <IonIcon icon={trash} />
